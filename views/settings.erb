@@ -1,0 +1,14 @@
+<form action="/settings" method="post">
+  <label for="companyName">Company Name:</label>
+  <input type="text" id="companyName" name="companyName" value="<%= @@settings_data[:company_name] %>">
+
+  <label for="timeZone">Time Zone:</label>
+  <select id="timeZone" name="timeZone">
+    <option value="GMT" <%= 'selected' if @@settings_data[:time_zone] == 'GMT' %>>GMT</option>
+    <option value="UTC" <%= 'selected' if @@settings_data[:time_zone] == 'UTC' %>>UTC</option>
+    <option value="EST" <%= 'selected' if @@settings_data[:time_zone] == 'EST' %>>EST</option>
+    <!-- Add more time zones as needed -->
+  </select>
+
+  <button type="submit">Save</button>
+</form>
